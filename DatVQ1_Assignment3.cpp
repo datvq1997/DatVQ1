@@ -87,7 +87,6 @@ int ConvertFromDayInYear(int d, int &m, int &y)
 		}
 		y--;
 	}
-
 	do
 	{
 		if (m == 12)
@@ -103,7 +102,6 @@ int ConvertFromDayInYear(int d, int &m, int &y)
 		d = d - DIM;
 	} while (d > 0);
 	d = d + DIM;
-
 	return d;
 }
 
@@ -118,12 +116,14 @@ int main()
 	cin >> m;
 	cout << "year:";
 	cin >> y;
+
 	cout << "\n*==================*MENU*==================*\n";
 	cout << "1. Find the number of month\n";
 	cout << "2. Show next day (dd/mm/yyyy)\n";
 	cout << "3. Show previous day (dd/mm/yyyy)\n";
 	cout << "Input number: ";
 	cin >> SelectNum ;
+
 	switch (SelectNum)
 	{
 		case 1: 
