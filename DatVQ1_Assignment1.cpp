@@ -18,7 +18,7 @@ bool IsPalindrome(int x)
 	return false;
 }
 
-/*int main()
+int main()
 {
 	int x; 
 
@@ -30,6 +30,6 @@ bool IsPalindrome(int x)
 	else {
 		cout << "\n" << x << " isn't Palindrome \n";
 	}
-}*/
+}
 
 
