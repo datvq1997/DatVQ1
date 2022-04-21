@@ -142,7 +142,7 @@ int main()
 		}
 		case 2:
 		{
-			if (isDay(d,m,y) == true)
+			if (isDay(d,m,y) == true && isMonth(m) == true)
 			{
 				int DIY = ConvertToDayInYear(d, m, y);
 				int nextD = ConvertFromDayInYear(DIY+1, m, y);
@@ -156,7 +156,7 @@ int main()
 		}
 		case 3:
 		{
-			if (isDay(d, m, y) == true)
+			if (isDay(d, m, y) == true && isMonth(m) == true)
 			{
 				int DIY = ConvertToDayInYear(d, m, y);
 				int preD = ConvertFromDayInYear(DIY - 1, m, y);
