@@ -5,12 +5,12 @@ bool IsPalindrome(int x)
 {
 	int buf = 0;
 	int ReX = 0;
-	int OrgX = x;
+	int temp = x;
  	do {
-		buf = OrgX % 10;
-		OrgX = OrgX / 10;
+		buf = temp % 10;
+		temp = temp / 10;
 		ReX = ReX * 10 + buf;
-	} while (OrgX != 0);
+	} while (temp != 0);
 
 	if (ReX == x) {
 		return true;
