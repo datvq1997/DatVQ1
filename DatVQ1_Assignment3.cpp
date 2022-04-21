@@ -150,7 +150,7 @@ int main()
 			}
 			else
 			{
-				cout << "\nThe day input is not valid";
+				cout << "\nYour input is not valid";
 			}
 			break;
 		}
@@ -164,7 +164,7 @@ int main()
 			}
 			else
 			{
-				cout << "\nThe day input is not valid";
+				cout << "\nYour input is not valid";
 			}
 			break;
 		}
