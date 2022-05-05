@@ -87,7 +87,6 @@ int ConvertFromDayInYear(int d, int &m, int &y)
 		}
 		y--;
 	}
-
 	do
 	{
 		if (m == 12)
@@ -103,7 +102,6 @@ int ConvertFromDayInYear(int d, int &m, int &y)
 		d = d - DIM;
 	} while (d > 0);
 	d = d + DIM;
-
 	return d;
 }
 
@@ -142,7 +140,7 @@ int main()
 		}
 		case 2:
 		{
-			if (isDay(d,m,y) == true)
+			if (isDay(d,m,y) == true && isMonth(m) == true)
 			{
 				int DIY = ConvertToDayInYear(d, m, y);
 				int nextD = ConvertFromDayInYear(DIY+1, m, y);
@@ -150,13 +148,13 @@ int main()
 			}
 			else
 			{
-				cout << "\nThe day input is not valid";
+				cout << "\nYour input is not valid";
 			}
 			break;
 		}
 		case 3:
 		{
-			if (isDay(d, m, y) == true)
+			if (isDay(d, m, y) == true && isMonth(m) == true)
 			{
 				int DIY = ConvertToDayInYear(d, m, y);
 				int preD = ConvertFromDayInYear(DIY - 1, m, y);
@@ -164,7 +162,7 @@ int main()
 			}
 			else
 			{
-				cout << "\nThe day input is not valid";
+				cout << "\nYour input is not valid";
 			}
 			break;
 		}

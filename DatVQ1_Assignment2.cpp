@@ -2,7 +2,7 @@
 
 using namespace std;
 
-/*int main()
+int main()
 {
 	int khoangTrang = 4;
 	int dauSao = 1;
@@ -28,5 +28,5 @@ using namespace std;
 		khoangTrang++;
 		cout << "\n";
 	} while (dauSao > 0);
-}*/
+}
 
