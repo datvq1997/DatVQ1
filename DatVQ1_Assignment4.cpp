@@ -42,7 +42,7 @@ int* get_even_num(int* arr, int* sz)
 	return p_arEvenNum;
 }
 
-/*int main()
+int main()
 {
 	int sz_arNum;
 	int sz_arEvenNum;
@@ -71,4 +71,4 @@ int* get_even_num(int* arr, int* sz)
 		cout << p_arResult[i] <<" ";
 		i++;
 	} while (i < sz_arEvenNum);
-}*/
+}
