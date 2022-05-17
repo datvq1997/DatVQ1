@@ -21,6 +21,7 @@ int findsubstr(const char *str, char *sub)
         sub= sub - nCount;
         str= str - nCount;
         str++;
+        if (*str == '\0') result = -1;
     }
     return result;
 }
