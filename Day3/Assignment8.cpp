@@ -2,7 +2,16 @@
 #include <string>
 
 using namespace std;
-
+/*****************************
+* Name:         findsubstr
+* Description:  Find string
+* Arguments:
+    const char *str: main string
+    char *sub: String to search
+* Return: int
+    Returns the position of the first sub string in the main string.
+    If sub does not appear in main string, return -1.
+*****************************/
 int findsubstr(const char *str, char *sub)
 {
     int result = 0;
