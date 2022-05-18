@@ -11,7 +11,7 @@ int findsubstr(const char *str, char *sub)
     {
         result++;
         nCount = 0;
-        while (*str == *sub)
+        while (*str == *sub && *sub != '\0')
         {
             str++;
             sub++;
