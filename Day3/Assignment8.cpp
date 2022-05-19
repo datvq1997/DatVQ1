@@ -66,6 +66,8 @@ int main()
     }
     // Tim chuoi can tim trong chuoi chinh
     cout << "Result: " << findsubstr(str,sub);
+    delete[] str;
+    delete[] sub;
 }
 
 
