@@ -18,6 +18,7 @@ class CFraction
     public:
         void inputFraction();   //Input Fraction
         void printConsole();    //Print fractions to the screen
+        void reduceFractions();
         friend CFraction operator+ (const CFraction&, const CFraction&);    //Support adding 2 fractions
         friend CFraction operator- (const CFraction&, const CFraction&);    //support subtracting 2 fractions
         friend CFraction operator* (const CFraction&, const CFraction&);    //support multiplying 2 fractions

@@ -47,7 +47,7 @@ void CFraction::printConsole()
 CFraction operator+ (const CFraction& CFraction_A, const CFraction& CFraction_B)
 {
     CFraction CFractionResult;
-    if (CFraction_A.den != CFraction_B.den)
+    if (CFraction_A.den != CFraction_B.den )
     {
         CFractionResult.den = CFractionResult.LCM(CFraction_A.den, CFraction_B.den);
         CFractionResult.num = CFraction_A.num * (CFractionResult.den / CFraction_A.den) + CFraction_B.num * (CFractionResult.den / CFraction_B.den);
@@ -56,6 +56,7 @@ CFraction operator+ (const CFraction& CFraction_A, const CFraction& CFraction_B)
         CFractionResult.den = CFraction_A.den;
         CFractionResult.num = CFraction_A.num + CFraction_B.num;
     }
+    CFractionResult.reduceFractions();
     return CFractionResult;
 }
 
@@ -78,6 +79,7 @@ CFraction operator- (const CFraction& CFraction_A, const CFraction& CFraction_B)
         CFractionResult.den = CFraction_A.den;
         CFractionResult.num = CFraction_A.num - CFraction_B.num;
     }
+    CFractionResult.reduceFractions();
 return CFractionResult;
 }
 
@@ -93,12 +95,7 @@ CFraction operator* (const CFraction& CFraction_A, const CFraction& CFraction_B)
     CFraction CFractionResult;
     CFractionResult.den = CFraction_A.den * CFraction_B.den;
     CFractionResult.num = CFraction_A.num * CFraction_B.num;
-    int reduceFractions = CFractionResult.GCD(CFractionResult.den, CFractionResult.num);
-    if (reduceFractions != 0)
-    {
-        CFractionResult.den /= reduceFractions;
-        CFractionResult.num /= reduceFractions;
-    }
+    CFractionResult.reduceFractions();
     return CFractionResult;
 }
 
@@ -114,13 +111,27 @@ CFraction operator/ (const CFraction& CFraction_A, const CFraction& CFraction_B)
     CFraction CFractionResult;
     CFractionResult.den = CFraction_A.den * CFraction_B.num;
     CFractionResult.num = CFraction_A.num * CFraction_B.den;
-    int reduceFractions = CFractionResult.GCD(CFractionResult.den, CFractionResult.num);
-    if (reduceFractions != 0)
-    {
-        CFractionResult.den /= reduceFractions;
-        CFractionResult.num /= reduceFractions;
-    }
+    CFractionResult.reduceFractions();
     return CFractionResult;
+}
+
+//**********************************************************
+// Name:         GCD
+// Description:  Find the greatest common divisor of two numbers
+// Arguments:    a,b: two numbers
+// Return:       int: greatest common divisor
+//**********************************************************
+void CFraction::reduceFractions()
+{
+    if (this->num != 0) 
+    {
+        int reduceFractions = this->GCD(this->den, this->num);
+        if (reduceFractions != 0)
+        {
+            this->den /= reduceFractions;
+            this->num /= reduceFractions;
+        }
+    } 
 }
 
 //**********************************************************
@@ -131,6 +142,12 @@ CFraction operator/ (const CFraction& CFraction_A, const CFraction& CFraction_B)
 //**********************************************************
 int CFraction::GCD(int a, int b)
 {
+    a = abs(a);
+    b = abs(b);
+    if (a == 0 || b == 0)
+    {
+        return 0;
+    }
     while (a != b)
     {
         if (a > b)
